@@ -298,7 +298,7 @@ function QiniuJsSDK() {
                     'chunk_size': undefined,
                     'multipart_params': {
                         'token': token,
-                        'key': file.name
+                        //'key': file.name
                     }
                 });
             }
@@ -417,7 +417,7 @@ function QiniuJsSDK() {
                 var res = that.parseJSON(info.response);
                 ctx = ctx ? ctx : res.ctx;
                 if (ctx) {
-                    var url = 'http://up.qiniu.com/mkfile/' + file.size + '/key/' + that.URLSafeBase64Encode(file.name);
+                    var url = 'http://up.qiniu.com/mkfile/' + file.size + '/key';//'/key/' + that.URLSafeBase64Encode(file.name);
                     var ajax = that.createAjax();
                     ajax.open('POST', url, true);
                     ajax.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
